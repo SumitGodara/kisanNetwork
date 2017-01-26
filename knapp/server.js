@@ -19,8 +19,9 @@ const port = process.env.PORT || '8080';
 app.set('port', port);
 
 const server = http.createServer(app);
-server.listen(port, () => console.log(`API running on localhost:${port}`));
+server.listen(port, () => console.log(`API running on 35.154.133.200:${port}`));
 
+//apis
 app.post('/sendOtp', (req, res) => {
 
   let contact = req.body.param.contact
@@ -69,7 +70,7 @@ app.post('/sendOtp', (req, res) => {
         from: from,
         body: msg
     })
-    let promise2 =  MongoClient.connect('mongodb://localhost:27017/contactApp')
+    let promise2 =  MongoClient.connect('mongodb://35.154.133.200/:27017/contactApp')
 
     return promise1.then((resp) => {
       return promise2.then((db) => {
@@ -85,7 +86,7 @@ app.post('/sendOtp', (req, res) => {
 
 app.post('/getSMS', (req, res) => {
   
-  return MongoClient.connect('mongodb://localhost:27017/contactApp', function (err, db) {
+  return MongoClient.connect('mongodb://35.154.133.200:27017/contactApp', function (err, db) {
     
     if (err) return res.send({mongoError: err})
     
