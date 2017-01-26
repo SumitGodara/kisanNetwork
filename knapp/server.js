@@ -100,9 +100,9 @@ app.post('/getSMS', (req, res) => {
           for (var prop  in result) {
             if (result.hasOwnProperty(prop)) {
               if (prop === 'time') {
-		let date = Date.parse(result[prop])
-                date = date + 330*60*1000
-		obj[prop] = dateFormat(date, 'hh:MM:ss TT dd/mm/yy')
+                let date = Date.parse(result[prop])
+                // date = date + 330*60*1000
+                obj[prop] = dateFormat(date, 'hh:MM:ss TT dd/mm/yy')
               } else {
                 obj[prop] = result[prop]
               }
