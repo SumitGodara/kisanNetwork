@@ -1,0 +1,47 @@
+<h1>{{title}}</h1>
+<div class="container">
+    <div class = "row">
+      <div class = "col-md-3">
+      </div>
+      <div class = "col-md-6">
+        <ul id = "knTab" class = "nav nav-tabs">
+          <li class = "active">
+              <button id = "#contactList" data-toggle = "tab" (click)="onSelect('contactList')">
+                Contact List
+              </button>
+          </li>
+          <li>
+            <button id = "#smsList" data-toggle = "tab" (click)="onSelect('smsList')">
+                SMS Sent
+            </button>
+          </li>
+        </ul>
+        <div id = "knTabContent" class = "tab-content">
+          <div class = "tab-pane in active" id = "contactList">
+            <div  *ngIf = "active != smsList">
+              <router-outlet></router-outlet>
+            </div>
+          </div>
+          <div class = "tab-pane" id = "smsList">
+            <div *ngIf= "active == smsList">
+              <router-outlet></router-outlet>
+            </div>
+          </div>            
+        </div>
+        <!--<router-outlet></router-outlet>-->
+        <!--<input id="tab-1" type="radio" name="tab-group" checked="checked" />
+        <label for="tab-1">Contact List</label>
+        <input id="tab-2" type="radio" name="tab-group" />
+        <label for="tab-2">SMS Sent</label>
+        <div id="content">
+            <div id="content-1">
+                <router-outlet></router-outlet>
+            </div>
+            <div id="content-2">
+            </div>
+        </div>-->
+      </div>
+      <div class = "col-md-3">
+      </div>
+    </div>
+</div>

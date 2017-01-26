@@ -1,0 +1,12 @@
+<h3>Contact Details</h3>
+<div class = "container">
+  <div class = "row">
+    <div class = "col-md-12">
+      <ul class="contact-details">
+        <p> Name: {{contact.fName}} {{contact.lName}} </p>
+        <p> Contact: {{contact.number}} </p>
+      </ul>
+      <button ng-class="badge" (click)="onSendMsg(contact)"> Send Message</button>
+    </div>
+  </div>
+</div>

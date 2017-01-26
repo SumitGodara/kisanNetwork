@@ -1,0 +1,12 @@
+<h3>Contact List</h3>
+<div class = "container">
+  <div class = "row">
+    <div class = "col-md-12">
+      <ul class="contacts">
+        <li *ngFor="let contact of contacts" (click)="onSelect(contact)">
+          <span class="badge" >{{contact.fName}}</span> {{contact.lName}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
